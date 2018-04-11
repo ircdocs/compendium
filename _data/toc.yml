@@ -1,17 +1,57 @@
+##
+## Front Matter
+##
+
 - title: Index
+  # the url below is intentionally not correct because the main front page looks better
+  # without the page navigation fodder up the top
   url: /index.html
+  level: 0
 
 - title: Introduction
   url: /intro.html
+  level: 0
+
+
+##
+## Using IRC
+##
 
 - title: Using IRC
-  url: /using-irc/index.html
+  url: /using-irc/
+  level: 0
+
+- title: Welcome to IRC
+  url: /using-irc/welcome.html
+  level: 1
+
+- title: SASL
+  url: /using-irc/sasl.html
+  level: 1
+
+
+##
+## Running a Network
+##
 
 - title: Running a Network
-  url: /running-a-network/index.html
+  url: /running-a-network/
+  level: 0
+
+
+##
+## Developing With IRC
+##
 
 - title: Developing With IRC
-  url: /developing/index.html
+  url: /developing/
+  level: 0
+
+
+##
+## History
+##
 
 - title: History
-  url: /history/index.html
+  url: /history/
+  level: 0

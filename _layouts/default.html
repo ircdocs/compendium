@@ -72,15 +72,15 @@
         function toggledarkmode() {
             document.body.classList.toggle("dark");
             if (document.body.classList.contains("dark")) {
-                document.cookie = "darkmode=true";
+                document.cookie = "darkmode=true;path=/";
             } else {
-                document.cookie = "darkmode=false";
+                document.cookie = "darkmode=false;path=/";
             }
         }
 
-        // enable dark mode if we should do so
-        if (document.cookie == "darkmode=true") {
-            document.body.classList.add("dark");
+        // set dark mode if we should do so
+        if (document.cookie == 'darkmode=true') {
+            document.body.classList.add('dark');
         }
     </script>
 </html>

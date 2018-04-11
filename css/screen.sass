@@ -20,6 +20,10 @@ body
         flex: 1 1 auto
 
 // overall settings
+html
+    // overscroll
+    background: $ircdocs-dark-blue
+
 body
     font-family: $standard-font-stack
     background: $ircdocs-light-bg
@@ -48,6 +52,7 @@ body > nav
 .pagenav
     background: $ircdocs-dark-blue
     text-align: center
+    z-index: 999
     @supports(position:sticky)
         position: sticky
         top: -0.1em
@@ -67,13 +72,13 @@ body > nav
 
 // content
 #content
-    margin: 2em 0
+    margin: 2em 0 0
+    padding-bottom: 3em
 
-    .frontpage
-        text-align: center
-        padding: 2em 0
+    .frontpage, .frontsec
         h1
             font-size: 2.85em
+            margin-top: 0
             margin-bottom: 0.24em
         subtitle
             font-size: 1.5em
@@ -90,6 +95,31 @@ body > nav
                     margin-bottom: 0.2em
                 subtitle
                     font-size: 1.2em
+
+    .frontpage
+        text-align: center
+        padding: 2em 0
+    .frontsec
+        padding-top: 3em
+        padding-bottom: 4em
+    
+    .conceptlist
+        display: flex
+        width: 100%
+        padding: 2em 0
+        .concept
+            width: 30%
+            flex: 1 1 auto
+            text-align: center
+            display: flex
+            flex-direction: column
+            .image
+                font-size: 7em
+                opacity: 0.85
+            subtitle
+                padding-top: 0.77em
+                font-size: 1.3em
+                opacity: 0.78
 
 // footer
 footer
@@ -115,6 +145,7 @@ a
 h1
     font-size: 2.5em
     color: #334
+    margin-top: 0.5em
     margin-bottom: 0.4em
     .subtitle
         display: block
@@ -122,8 +153,10 @@ h1
         color: #445
         font-weight: normal
 h2
+    font-size: 1.9em
     color: #3e3e4e
-    margin-bottom: 1rem
+    margin-top: 0.75em
+    margin-bottom: 0.77rem
 h3
     color: #445
     margin-bottom: 0.5rem
@@ -137,6 +170,15 @@ h1, h2, h3, h4
         color: #33a
         &:hover
             color: #119
+
+hr
+    @media screen
+        border: transparentize(#99b, 0.85) 0.1rem solid
+        background: transparentize(#99b, 0.85)
+        border-radius: 2rem
+        margin: 3rem auto
+    @media print
+        display: none
 
 p
     margin-top: 0.5rem
@@ -168,7 +210,8 @@ body > nav
         color: $ircdocs-dark-blue-link
 
 #content
-    .frontpage
+    background: $ircdocs-light-bg
+    .frontpage, .frontsec
         subtitle
             color: $ircdocs-dark-blue-subtitle
 
@@ -211,7 +254,8 @@ body.dark
     
     // content
     #content
-        .frontpage
+        background: $ircdocs-dark-blue
+        .frontpage, .frontsec
             subtitle
                 color: #787884
 

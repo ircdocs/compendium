@@ -3,7 +3,10 @@ title: The IRC Compendium
 layout: default
 ---
 
-# Introduction
+<div class="frontsec">
+    <h1>Introduction</h1>
+    <subtitle>the irc compendium</subtitle>
+</div>
 
 Welcome to the IRC Compendium! My name's Daniel and I'm writing this up to pass along my knowledge to regular users, network admins, as well as software developers.
 
