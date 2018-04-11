@@ -30,15 +30,31 @@
   level: 1
 
 - title: Clients
-  url: /using-irc/clients.html
+  url: /using-irc/clients/index.html
   level: 1
+
+- title: AdiIRC
+  url: /using-irc/clients/adiirc.html
+  level: 2
+
+- title: IRCCloud
+  url: /using-irc/clients/irccloud.html
+  level: 2
+
+- title: mIRC
+  url: /using-irc/clients/mirc.html
+  level: 2
+
+- title: Textual
+  url: /using-irc/clients/textual.html
+  level: 2
+
+- title: WeeChat
+  url: /using-irc/clients/weechat.html
+  level: 2
 
 - title: SASL
   url: /using-irc/sasl.html
-  level: 1
-
-- title: Software
-  url: /using-irc/software.html
   level: 1
 
 
