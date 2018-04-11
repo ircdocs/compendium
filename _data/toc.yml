@@ -25,8 +25,20 @@
   url: /using-irc/welcome.html
   level: 1
 
+- title: Networks
+  url: /using-irc/networks.html
+  level: 1
+
+- title: Clients
+  url: /using-irc/clients.html
+  level: 1
+
 - title: SASL
   url: /using-irc/sasl.html
+  level: 1
+
+- title: Software
+  url: /using-irc/software.html
   level: 1
 
 
