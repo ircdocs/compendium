@@ -1,0 +1,53 @@
+
+{% assign foundcurrentpage = false %}
+
+{% assign prevpagelink = "" %}
+{% assign nextpagelink = "" %}
+
+{% assign lastpage = site.data.toc[0] %}
+{% assign toprintnextpage = false %}
+{% assign nextpageprinted = false %}
+
+{% for tpage in site.data.toc %}
+    {% if toprintnextpage %}
+        {% assign nextpagelink = tpage.url %}
+
+        {% assign toprintnextpage = false %}
+        {% assign nextpageprinted = true %}
+    {% endif %}
+
+    {% if tpage.url == page.url %}
+        {% assign foundcurrentpage = true %}
+
+        {% if lastpage.url == page.url %}
+        {% else %}
+            {% assign prevpagelink = lastpage.url %}
+        {% endif %}
+
+        {% assign toprintnextpage = true %}
+    {% endif %}
+
+    {% assign lastpage = tpage %}
+{% endfor %}
+
+{% if foundcurrentpage %}
+<div class="pagenav">
+<div class="wrapper">
+
+{% if prevpagelink == "" %}
+<span class="prevlink">Previous Page</span>
+{% else %}
+<a class="prevlink" href="{{ prevpagelink }}">Previous Page</a>
+{% endif %}
+
+<a class="toclink" href="#">Table of Contents</a>
+
+{% if nextpagelink == "" %}
+<span class="nextlink">Next Page</span>
+{% else %}
+<a class="nextlink" href="{{ nextpagelink }}">Next Page</a>
+{% endif %}
+
+</div>
+</div>
+{% endif %}

@@ -1,0 +1,17 @@
+- title: Index
+  url: /index.html
+
+- title: Introduction
+  url: /intro.html
+
+- title: Using IRC
+  url: /using-irc/index.html
+
+- title: Running a Network
+  url: /running-a-network/index.html
+
+- title: Developing With IRC
+  url: /developing/index.html
+
+- title: History
+  url: /history/index.html

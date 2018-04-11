@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+    <head>
+        <title>{{ page.title }}</title>
+        
+        <!-- Homepage CSS -->
+        <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <!-- http://realfavicongenerator.net \o/ -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/favicons/manifest.json">
+        <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/favicons/favicon.ico">
+        <meta name="apple-mobile-web-app-title" content="stats.ircdocs.horse">
+        <meta name="application-name" content="stats.ircdocs.horse">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#444455">
+    </head>
+    <body>
+        <a onclick="toggledarkmode()" id="darkmodebtn"><i class="fa fa-sun-o show-when-dark"></i><i class="fa fa-moon-o show-when-light"></i></a>
+
+        <nav>
+            <div class="wrapper linklist">
+                <a href="/" class="wordmark" title="IRC Compendium">compendium</a>
+                <a href="/intro" title="">intro</a>
+                <a href="/using-irc/" title="">using irc</a>
+                <a href="/running-a-network/" title="">running a network</a>
+                <a href="/developing/" title="">developing with irc</a>
+                <a href="/history/" title="">history</a>
+            </div>
+        </nav>
+        {% include pagenav.html %}
+        <div id="content">
+            <div class="wrapper">
+                {{ content }}
+            </div>
+        </div>
+        <footer>
+            <div class="wrapper">
+                <a href="https://ircdocs.horse">ircdocs</a> &middot;
+                <a href="https://compendium.ircdocs.horse">compendium</a> &middot;
+                <a href="https://defs.ircdocs.horse">defs</a> &middot;
+                <a href="https://modern.ircdocs.horse">modern docs</a> &middot;
+                <a href="https://stats.ircdocs.horse">stats</a> &middot;
+                <a href="https://wooooms.ircdocs.horse">wooooms</a>
+                <br/>
+                <a href="ircs://irc.freenode.net:6697/#ircdocs">#ircdocs on Freenode</a> &middot;
+                <a href="https://github.com/ircdocs">GitHub</a>
+                <br/>
+                <a href="http://danieloaks.net">Made by Daniel Oaks</a>
+            </div>
+        </footer>
+    </body>
+    <script>
+        function toggledarkmode() {
+            document.body.classList.toggle("dark");
+            if (document.body.classList.contains("dark")) {
+                document.cookie = "darkmode=true";
+            } else {
+                document.cookie = "darkmode=false";
+            }
+        }
+
+        // enable dark mode if we should do so
+        if (document.cookie == "darkmode=true") {
+            document.body.classList.add("dark");
+        }
+    </script>
+</html>

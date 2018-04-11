@@ -1,0 +1,237 @@
+---
+---
+
+@import mixins/reset
+@import mixins/font-awesome-min
+@import mixins/font-opensans
+@import mixins/media
+@import mixins/ircdocs
+
+// sticky footer
+html
+    min-height: 100%
+    height: 100%
+body
+    min-height: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    #content
+        flex: 1 1 auto
+
+// overall settings
+body
+    font-family: $standard-font-stack
+    background: $ircdocs-light-bg
+
+#darkmodebtn
+    display: block
+    position: fixed
+    left: 0.3em
+    bottom: 0.3em
+    padding: 0.5em 0.6em
+    border-radius: 5em
+    font-size: 1.7rem
+    background: transparentize($ircdocs-light-bg, 0.2)
+    color: $ircdocs-dark-blue
+
+// header nav
+body > nav
+    a
+        display: inline-block
+        padding: 0.45em 0 0.35em
+        &:first-child
+            margin-right: 2rem
+        + a
+            margin-left: 1.4em
+
+.pagenav
+    background: $ircdocs-dark-blue
+    text-align: center
+    @supports(position:sticky)
+        position: sticky
+        top: -0.1em
+        padding-top: 0.1em
+
+    .wrapper
+        display: flex
+        > a, > span
+            display: block
+            padding: 1em 0
+        color: #aaa
+        a, a:visited, a:active
+            color: $ircdocs-dark-blue-link
+
+        .toclink
+            flex: 1 1 auto
+
+// content
+#content
+    margin: 2em 0
+
+    .frontpage
+        text-align: center
+        padding: 2em 0
+        h1
+            font-size: 2.85em
+            margin-bottom: 0.24em
+        subtitle
+            font-size: 1.5em
+        
+        .frontpage-links
+            margin-top: 2em
+            > a
+                display: block
+                margin-top: 1em
+                padding: 0.75em 0
+                h2
+                    font-size: 1.7em
+                    font-weight: 600
+                    margin-bottom: 0.2em
+                subtitle
+                    font-size: 1.2em
+
+// footer
+footer
+    text-align: center
+    line-height: 1.3
+    padding: 1em 0
+    font-size: 0.9em
+    a
+        display: inline-block
+        padding: 0 0.1em
+
+// generics
+.wrapper
+    width: 57rem
+    max-width: calc(100% - 2em)
+    margin: 0 auto
+
+a
+    font-style: italic
+    text-decoration: none
+    transition: color 0.2s
+
+h1
+    font-size: 2.5em
+    color: #334
+    margin-bottom: 0.4em
+    .subtitle
+        display: block
+        font-size: 1.2rem
+        color: #445
+        font-weight: normal
+h2
+    color: #3e3e4e
+    margin-bottom: 1rem
+h3
+    color: #445
+    margin-bottom: 0.5rem
+h4
+    color: #4e4e5e
+    margin-bottom: 0.65rem
+
+h1, h2, h3, h4
+    page-break-after: avoid
+    a
+        color: #33a
+        &:hover
+            color: #119
+
+p
+    margin-top: 0.5rem
+    line-height: 1.3
+    + p
+        margin-top: 1rem
+
+li
+    + li
+        margin-top: 0.9rem
+    p
+        &:first-child
+            margin-top: 0
+        &:last-child
+            margin-bottom: 0
+
+.displaynone
+    display: none
+
+//
+//// Colours
+//
+
+// regular colours
+body > nav
+    background: $ircdocs-dark-blue
+    color: $ircdocs-dark-blue-color
+    a, a:visited, a:active
+        color: $ircdocs-dark-blue-link
+
+#content
+    .frontpage
+        subtitle
+            color: $ircdocs-dark-blue-subtitle
+
+footer
+    background: $ircdocs-dark-blue
+    color: $ircdocs-dark-blue-color
+    a, a:visited, a:active
+        color: $ircdocs-dark-blue-link
+
+a
+    &:visited, &:active
+        color: #9141d2
+
+h1, h2, h3, h4, h5
+    color: $ircdocs-dark-blue
+
+// dark theme
+body:not(.dark)
+    .show-when-dark
+        display: none
+
+body.dark
+    background: $ircdocs-dark-blue
+    color: #dddde3
+
+    .show-when-light
+        display: none
+
+    #darkmodebtn
+        background: transparentize($ircdocs-dark-blue, 0.2)
+        color: #ddd
+    
+    // header
+    > nav
+        a, a:visited, a:active
+            color: #bcbccc
+    
+    .pagenav
+        background: $ircdocs-dark-blue
+    
+    // content
+    #content
+        .frontpage
+            subtitle
+                color: #787884
+
+    // footer
+    footer
+        color: #bcbccc
+        a, a:visited, a:active
+            color: #bcbccc
+
+    // generics
+    a
+        color: #7a7aff
+        &:visited, &:active
+            color: #c194e6
+
+    h1
+        color: #ceceda
+    h2
+        color: #dadae1
+    h3
+        color: #c6c6d2
+    h4
+        color: #b7b7c3
