@@ -10,10 +10,8 @@
 // sticky footer
 html
     min-height: 100%
-    height: 100%
 body
     min-height: 100%
-    height: 100%
     display: flex
     flex-direction: column
     #content
@@ -194,6 +192,15 @@ li
             margin-top: 0
         &:last-child
             margin-bottom: 0
+
+pre, tt, code
+    font-size: 90%
+    font-family: $mono-font-stack
+pre
+    padding: 1rem
+    border-radius: 0.5rem
+    background: #ffb
+    page-break-inside: avoid
 
 .displaynone
     display: none
